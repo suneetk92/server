@@ -21,11 +21,11 @@ const argv = optimist
         describe: 'listen on this port for outside requests'
     })
     .options('address', {
-        default: '0.0.0.0',
+        default: process.env.HOST || '0.0.0.0',
         describe: 'IP address to bind to'
     })
     .options('domain', {
-        default: process.env.HOST || '',
+        default: process.env.DOMAIN || '',
         describe: 'Specify the base domain name. This is optional if hosting localtunnel from a regular example.com domain. This is required if hosting a localtunnel server from a subdomain (i.e. lt.example.dom where clients will be client-app.lt.example.come)',
     })
     .options('max-sockets', {
