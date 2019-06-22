@@ -58,10 +58,12 @@ process.on('SIGTERM', () => {
 });
 
 process.on('uncaughtException', (err) => {
+    this.debug('error in uncaughtException %s', err);
     log.error(err);
 });
 
 process.on('unhandledRejection', (reason, promise) => {
+    this.debug('error in unhandledRejection %s', err);
     log.error(reason);
 });
 
